@@ -19,8 +19,6 @@ module.exports = function(grunt) {
 
         grunt.file.expand(files).forEach(function(filepath) {
             var result = beautify(grunt.file.read(filepath), tmp_opts);
-            // Had to re-beautify for weired issue of block comment.
-            result = beautify(result, tmp_opts);
 
             // ensure newline at end of beautified output
             result += '\n';
